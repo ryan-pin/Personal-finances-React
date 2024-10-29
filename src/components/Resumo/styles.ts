@@ -11,7 +11,7 @@ export const ResumoContainer = styled.section`
     gap: 2rem;
 
     margin-top: -5rem;
-`
+`;
 
 interface ResumoCardProps {
     variant?: 'green';
@@ -38,4 +38,4 @@ export const ResumoCard = styled.div<ResumoCardProps>`
     ${props => props.variant == 'green' && css`
     background: ${props.theme['green-700']};
     `}
-`
+`;
