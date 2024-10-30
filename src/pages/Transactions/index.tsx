@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header/Header";
+import { Pesquisa } from "../../components/Pesquisa/Pesquisa";
 import { Resumo } from "../../components/Resumo/resumo";
 import { PriceHighlight, TransacoesContainer, TransacoesTable } from "./styles";
 
@@ -9,6 +10,8 @@ export function Transactions() {
       <Resumo />
 
       <TransacoesContainer>
+        <Pesquisa />
+
         <TransacoesTable>
           <tbody>
             <tr>
