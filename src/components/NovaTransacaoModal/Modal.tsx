@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { Overlay, Content, CloseButton } from './styles';
-import { X } from 'phosphor-react';
+import { Overlay, Content, CloseButton, TransacaoType, TransacaoTypeButton } from './styles';
+import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
 
 export function NovaTransacaoModal() {
   return (
@@ -17,6 +17,18 @@ export function NovaTransacaoModal() {
             <input type="text" placeholder="Descrição" required/>
             <input type="number" placeholder="Valor" required/>
             <input type="text" placeholder="Categoria" required/>
+
+            <TransacaoType>
+              <TransacaoTypeButton variant='entrada' value='entrada'>
+                <ArrowCircleUp size={24} />
+                Entrada
+              </TransacaoTypeButton>
+
+              <TransacaoTypeButton variant='saida' value='saida'>
+                <ArrowCircleDown size={24} />
+                Saida
+              </TransacaoTypeButton>
+            </TransacaoType>
 
             <button type="submit">
                 Cadastrar
