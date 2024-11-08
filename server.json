@@ -5,16 +5,36 @@
             "description": "Desenvolvimento de site",
             "type": "entrada",
             "category": "Venda",
-            "price": "2500",
-            "createdAt": "'2024-11-04T20:09:28.574Z'"
+            "price": 2500,
+            "createdAt": "2024-11-04T20:09:28.574Z"
         },
+
         {
             "id": 2,
             "description": "Compra de roupas",
             "type": "saida",
             "category": "Pessoal",
-            "price": "1000",
-            "createdAt": "'2024-12-04T20:09:28.574Z'"
+            "price": 500,
+            "createdAt": "2024-12-04T20:09:28.574Z"
+        },
+
+        {
+            "id": 3,
+            "description": "Freelance",
+            "type": "entrada",
+            "category": "Venda",
+            "price": 3000,
+            "createdAt": "2024-12-07T20:10:30.574Z"
+        },
+
+        {
+            "id": 4,
+            "description": "Monitor",
+            "type": "saida",
+            "category": "Material de trabalho",
+            "price": 900,
+            "createdAt": "2024-12-08T20:10:30.574Z"
         }
+
     ]
 }
