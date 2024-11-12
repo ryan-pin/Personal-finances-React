@@ -1,40 +1,60 @@
 {
-    "transactions" : [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "type": "entrada",
-            "category": "Venda",
-            "price": 2500,
-            "createdAt": "2024-11-04T20:09:28.574Z"
-        },
-
-        {
-            "id": 2,
-            "description": "Compra de roupas",
-            "type": "saida",
-            "category": "Pessoal",
-            "price": 500,
-            "createdAt": "2024-12-04T20:09:28.574Z"
-        },
-
-        {
-            "id": 3,
-            "description": "Freelance",
-            "type": "entrada",
-            "category": "Venda",
-            "price": 3000,
-            "createdAt": "2024-12-07T20:10:30.574Z"
-        },
-
-        {
-            "id": 4,
-            "description": "Monitor",
-            "type": "saida",
-            "category": "Material de trabalho",
-            "price": 900,
-            "createdAt": "2024-12-08T20:10:30.574Z"
-        }
-
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "entrada",
+      "category": "Venda",
+      "price": 2500,
+      "createdAt": "2024-11-04T20:09:28.574Z"
+    },
+    {
+      "id": 2,
+      "description": "Compra de roupas",
+      "type": "saida",
+      "category": "Pessoal",
+      "price": 500,
+      "createdAt": "2024-12-04T20:09:28.574Z"
+    },
+    {
+      "id": 3,
+      "description": "Freelance",
+      "type": "entrada",
+      "category": "Venda",
+      "price": 3000,
+      "createdAt": "2024-12-07T20:10:30.574Z"
+    },
+    {
+      "id": 4,
+      "description": "Monitor",
+      "type": "saida",
+      "category": "Material de trabalho",
+      "price": 900,
+      "createdAt": "2024-12-08T20:10:30.574Z"
+    },
+    {
+      "description": "Desenvolvimento de telas",
+      "category": "Venda",
+      "price": 5000,
+      "type": "entrada",
+      "createdAt": "2024-11-12T22:29:28.254Z",
+      "id": 5
+    },
+    {
+      "description": "Upgrade setup",
+      "category": "Trabalho",
+      "price": 4530,
+      "type": "saida",
+      "createdAt": "2024-11-12T22:29:59.498Z",
+      "id": 6
+    },
+    {
+      "description": "Lanche",
+      "category": "Comida",
+      "price": 40,
+      "type": "saida",
+      "createdAt": "2024-11-12T23:11:26.441Z",
+      "id": 7
+    }
+  ]
 }
