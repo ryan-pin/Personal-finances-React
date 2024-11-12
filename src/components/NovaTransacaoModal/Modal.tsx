@@ -2,7 +2,29 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Overlay, Content, CloseButton, TransacaoType, TransacaoTypeButton } from './styles';
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
 
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const newTransactionFormSchema = z.object({
+  description: z.string(),
+  price: z.number(),
+  category: z.string(),
+  type: z.enum(['entrada', 'saida']),
+})
+
+type newTransactionFormInputs = z.infer<typeof newTransactionFormSchema >;
+
 export function NovaTransacaoModal() {
+  
+  const { register, handleSubmit, formState: { isSubmitting } } = useForm<newTransactionFormInputs>({
+    resolver: zodResolver(newTransactionFormSchema),
+  })
+
+  function handleCreateNewTransaction(data: newTransactionFormInputs ){
+    console.log(data)
+  }
+  
   return (
     <Dialog.Portal>
       <Overlay />
@@ -13,10 +35,25 @@ export function NovaTransacaoModal() {
             <X size={24} />
         </CloseButton>
 
-        <form>
-            <input type="text" placeholder="Descrição" required/>
-            <input type="number" placeholder="Valor" required/>
-            <input type="text" placeholder="Categoria" required/>
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+            <input 
+              type="text" 
+              placeholder="Descrição" 
+              required
+              {...register('description')}
+            />
+            <input 
+              type="number" 
+              placeholder="Valor" 
+              required
+              {...register('price', { valueAsNumber: true })}
+            />
+            <input 
+              type="text" 
+              placeholder="Categoria" 
+              required
+              {...register('category')}
+            />
 
             <TransacaoType>
               <TransacaoTypeButton variant='entrada' value='entrada'>
@@ -30,7 +67,7 @@ export function NovaTransacaoModal() {
               </TransacaoTypeButton>
             </TransacaoType>
 
-            <button type="submit">
+            <button type="submit" disabled={ isSubmitting }>
                 Cadastrar
             </button>
         </form>
