@@ -3,8 +3,8 @@ import { PesquisaFormContainer } from "./styles";
 import { useForm } from "react-hook-form";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useContext } from "react";
 import { TransacaoContext } from "../../contexts/TransacoesContext";
+import { useContextSelector } from "use-context-selector";
 
 const searchFormSchema = z.object({
     query: z.string(),
@@ -14,7 +14,9 @@ type SearchFormInputs = z.infer<typeof searchFormSchema>;
 
 export function Pesquisa() {
 
-    const { fetchTransactions } = useContext(TransacaoContext)
+    const fetchTransactions  = useContextSelector(TransacaoContext, (context) => {
+        return context.fetchTransactions
+    })
 
     const { register, handleSubmit, formState: { isSubmitting } } = useForm<SearchFormInputs>({
         resolver: zodResolver(searchFormSchema),
